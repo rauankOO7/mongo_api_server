@@ -5,7 +5,7 @@ import mongoose from "mongoose"
 import router from "./routes/dataRouter.js";
 
 const app = express();
-const port = process.env.PORT;
+const port = 3000;
 
 
 app.use(express.json());
@@ -19,7 +19,7 @@ app.get("/",(req,res)=>{
 app.use("/data",router);
 
 mongoose
-  .connect(process.env.MONGODB_URI)
+  .connect("mongodb+srv://raunakraj6377:gWuJ79AM9GbzwE1d@cluster0.i2gyy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
   .then(() => {
     console.log("MongoDB connected");
     // Start the server
